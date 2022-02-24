@@ -1,0 +1,95 @@
+.auth__main
+	@include backgroundPrimary
+	align-items: center
+	display: flex
+	justify-content: center
+	min-height: 100vh
+
+.auth__box-container
+	align-items: stretch
+	background-color: $white
+	border-radius: 0.5rem
+	box-shadow: 0 3px $dark-grey
+	display: flex
+	flex-direction: column
+	justify-content: center
+	min-width: 23%
+	padding: 1.5rem
+	position: relative
+
+.auth__title
+	color: darken($color: $primary, $amount: 20)
+	margin: 0
+
+.auth__input
+	background-color: transparent
+	border: 0
+	color: $dark-grey
+	font-size: 1rem
+	margin-bottom: 0.8rem
+	margin: 0
+	padding: 0.3rem
+	width: 100%
+
+	border-bottom: 2px solid $dark-grey
+
+	&:focus
+		outline: none
+
+.auth__form
+	align-items: center
+	display: flex
+	flex-direction: column
+	gap: 0.5rem
+	margin: 1rem 0
+
+$google-blue: #4285f4
+$button-active-blue: #1669f2
+
+.google-btn
+	align-items: center
+	background-color: $google-blue
+	border-radius: 2px
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25)
+	cursor: pointer
+	display: flex
+	height: 2.8rem
+	margin-top: 0.3rem
+	position: relative
+	width: 100%
+
+	transition: box-shadow .3s ease
+
+	.google-icon-wrapper
+		align-items: center
+		background-color: $white
+		border-radius: 2px
+		display: flex
+		// min-height: 2.rem
+		align-self: stretch
+		justify-content: center
+		margin: 2px
+
+		width: 2.7rem
+
+	.google-icon
+		height: 1.2rem
+		width: 1.2rem
+
+	.btn-text
+		color: $white
+		font-size: 1rem
+		letter-spacing: 0.2px
+		text-align: center
+		flex-grow: 1
+
+	&:hover
+		box-shadow: 0 0 6px $google-blue
+
+	&:active
+		background: $button-active-blue
+
+.google__container
+	width: 80%
+	p
+		text-align: center
