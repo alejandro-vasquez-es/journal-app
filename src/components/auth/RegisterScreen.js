@@ -25,7 +25,7 @@ export const RegisterScreen = () => {
 	}
 
 	const isFormValid = () => {
-		//TODO:
+		//TODO: }
 	}
 
 	return (
