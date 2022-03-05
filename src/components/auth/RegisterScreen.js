@@ -1,13 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useForm } from '../../hooks/useForms'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import validator from 'validator';
+
+import { useForm } from '../../hooks/useForms';
+import { removeError, setError } from '../../actions/ui';
+import { startRegisterWithEmailPasswordName } from '../../actions/auth';
 
 export const RegisterScreen = () => {
 
-	// name: 'Alejandro',
-	// email: 'correo@correo.com',
-	// password: '123456',
-	// password2: '123456' 
+	const dispatch = useDispatch();
+	const { msgError } = useSelector(state => state.ui);
 
 	const [formValues, handleInputChange] = useForm({
 		name: 'Alejandro',
@@ -21,18 +24,43 @@ export const RegisterScreen = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		console.log(formValues);
+
+		if (isFormValid()) {
+			dispatch(startRegisterWithEmailPasswordName(email, password, name));
+		}
 	}
 
 	const isFormValid = () => {
-		//TODO: }
+
+		if (name.trim().length === 0) {
+			dispatch(setError('Name is require'));
+			return false;
+		} else if (!validator.isEmail(email)) {
+			dispatch(setError('Email is invalid'));
+			return false;
+		} else if (password !== password2 || password.length < 5) {
+			dispatch(setError('Password should be at least 5 characters and match each'));
+			return false;
+		}
+
+		dispatch(removeError());
+		return true;
 	}
 
 	return (
 		<>
 			<h2 className="auth__title">Register</h2>
 
-			<form className="auth__form">
+			<form
+				className="auth__form"
+				onSubmit={handleLogin}
+			>
+
+				{msgError &&
+					(<div className="auth__alert-error">
+						{msgError}
+					</div>)
+				}
 
 				<input
 					type="text"
@@ -75,7 +103,6 @@ export const RegisterScreen = () => {
 				<button
 					className="button mb-5"
 					type="submit"
-					onClick={handleLogin}
 				>
 					Register
 				</button>
