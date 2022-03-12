@@ -12,13 +12,7 @@ export const RegisterScreen = () => {
 	const dispatch = useDispatch();
 	const { msgError } = useSelector(state => state.ui);
 
-	const [formValues, handleInputChange] = useForm({
-		name: 'Alejandro',
-		email: 'correo@correo.com',
-		password: '123456',
-		password2: '123456'
-
-	});
+	const [formValues, handleInputChange] = useForm();
 
 	const { name, email, password, password2 } = formValues;
 
@@ -52,7 +46,7 @@ export const RegisterScreen = () => {
 			<h2 className="auth__title">Register</h2>
 
 			<form
-				className="auth__form"
+				className="auth__form animate__animated animate__fadeIn animate__faster"
 				onSubmit={handleLogin}
 			>
 
