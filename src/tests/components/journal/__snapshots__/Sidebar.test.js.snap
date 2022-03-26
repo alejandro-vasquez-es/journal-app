@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <Sidebar /> should display propertly 1`] = `
+<aside
+  className="journal__sidebar"
+>
+  <div
+    className="journal__sidebar-navbar"
+  >
+    <h1
+      className=" journal__sidebar-navbar-title mt-5"
+    >
+      <i
+        className="far fa-moon"
+      />
+      <span>
+          
+        TESTER
+      </span>
+    </h1>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Logout
+    </button>
+  </div>
+  <div
+    className="journal__new-entry"
+    onClick={[Function]}
+  >
+    <i
+      className="far fa-calendar-plus fa-5x"
+    />
+    <p
+      className="mt-5 mb-5"
+    >
+      New entry
+    </p>
+  </div>
+  <div
+    className="journal__entries"
+  >
+    <div
+      className="journal__entry  animate__animated animate__slideInLeft animate__faster"
+      onClick={[Function]}
+    >
+      <div
+        className="journal__entry-picture"
+        style={
+          Object {
+            "backgroundImage": "url(https://res.cloudinary.com/dj54vlrsd/image/upload/v1646877128/su5hfvcu8mkmwn48ca6w.jpg)",
+            "backgroundPosition": "center",
+            "backgroundSize": "cover",
+          }
+        }
+      />
+      <div
+        className="journal__entry-body"
+      >
+        <p
+          className="journal__entry-title"
+        >
+          TITLE
+        </p>
+        <p
+          className="journal__entry-content"
+        >
+          BODY
+        </p>
+      </div>
+      <div
+        className="journal__entry-date-box"
+      >
+        <p>
+          Wednesday
+        </p>
+        <span>
+          09
+        </span>
+      </div>
+    </div>
+  </div>
+</aside>
+`;

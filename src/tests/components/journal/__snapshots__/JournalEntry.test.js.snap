@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests in <JournalEntry/> should display propertly 1`] = `
+<div
+  className="journal__entry  animate__animated animate__slideInLeft animate__faster"
+  onClick={[Function]}
+>
+  <div
+    className="journal__entry-picture"
+    style={
+      Object {
+        "backgroundImage": "url(https://someplace.com/photo.png)",
+        "backgroundPosition": "center",
+        "backgroundSize": "cover",
+      }
+    }
+  />
+  <div
+    className="journal__entry-body"
+  >
+    <p
+      className="journal__entry-title"
+    >
+      TITLE
+    </p>
+    <p
+      className="journal__entry-content"
+    >
+      BODY
+    </p>
+  </div>
+  <div
+    className="journal__entry-date-box"
+  >
+    <p>
+      Friday
+    </p>
+    <span>
+      25
+    </span>
+  </div>
+</div>
+`;

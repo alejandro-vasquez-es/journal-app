@@ -13,14 +13,17 @@ export const LoginScreen = () => {
 	const { msgError, loading } = useSelector(state => state.ui);
 
 
-	const [formValues, handleInputChange] = useForm();
+	const [formValues, handleInputChange] = useForm({ email: '', password: '' });
 
 	const { email, password } = formValues;
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		if (isFormValid()) {
+			console.log('si se pudo')
 			await dispatch(startLoginEmailPassword(email, password));
+		} else {
+			console.log('no se pudo')
 		}
 	}
 

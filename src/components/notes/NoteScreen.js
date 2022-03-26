@@ -48,7 +48,7 @@ export const NoteScreen = () => {
 
 				Swal.fire('your note has been deleted successfully', '', 'success')
 			}
-		})
+		});
 
 
 	}
