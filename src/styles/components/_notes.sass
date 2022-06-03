@@ -2,6 +2,7 @@
 .notes__main-content
 	display: flex
 	flex-direction: column
+	min-height: 100vh
 	height: 100%
 	max-width: 100%
 
@@ -23,6 +24,7 @@
 	padding: 1.5rem
 	width: 100%
 	align-items: center
+	flex-grow: 1
 
 .notes__title-input, .notes__textarea
 	border: none
@@ -50,7 +52,12 @@
 
 .notes__image img
 	box-shadow: 5px 5px $dark-grey
-	height: 11rem
+	max-height: 13rem
+
+	@media (max-width: $layout-breakpoint-small)
+		height: auto
+		width: 90%
+		max-height: 15rem
 
 .notes__delete
 	color: $black

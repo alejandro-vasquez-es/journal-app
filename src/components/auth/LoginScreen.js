@@ -19,12 +19,8 @@ export const LoginScreen = () => {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		if (isFormValid()) {
-			console.log('si se pudo')
+		if (isFormValid())
 			await dispatch(startLoginEmailPassword(email, password));
-		} else {
-			console.log('no se pudo')
-		}
 	}
 
 	const handleGoogleLogin = () => {

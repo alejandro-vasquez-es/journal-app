@@ -14,7 +14,7 @@ export const JournalScreen = () => {
 
 			<Sidebar />
 
-			<main>
+			<main className="journal__main">
 
 				{
 					(active)

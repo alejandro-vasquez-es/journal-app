@@ -8,8 +8,30 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
 	const dispatch = useDispatch();
 	const noteDate = moment(date);
 
+	const goToActiveNote = (duration) => {
+		const targetPosition = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+		var startPosition = window.pageYOffset;
+		var distance = targetPosition - startPosition;
+		var startTime = null;
+
+		function animation(currentTime) {
+			if (startTime === null) startTime = currentTime;
+			var timeElapsed = currentTime - startTime;
+			var run = easeOutExpo(timeElapsed, startPosition, distance, duration);
+			window.scroll(0, run);
+			if (timeElapsed < duration) requestAnimationFrame(animation);
+		}
+
+		function easeOutExpo(t, b, c, d) {
+			return c * (-Math.pow(2, -10 * t / d) + 1) + b - 16;
+		}
+
+		requestAnimationFrame(animation);
+	}
+
 	const handleEntryClick = () => {
 		dispatch(activeNote(id, { date, title, body, url }));
+		goToActiveNote(500);
 	}
 
 	return (
